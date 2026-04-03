@@ -24,8 +24,8 @@
 /* Force light mode regardless of OS setting */
 @media(prefers-color-scheme:dark){
   html{color-scheme:light;}
-  body{background:#ffffff!important;color:#18140f!important;}
-  .faq-wrap,.fi,.fi-q,.fi-a,.sec,.sec-full{background:#ffffff!important;color:#18140f!important;}
+  body{background:#f9f4ee!important;color:#18140f!important;}
+  .faq-wrap,.fi,.fi-q,.fi-a{background:#ffffff!important;color:#18140f!important;}
   .fi-q{color:#18140f!important;}
 }
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -47,14 +47,16 @@ img{max-width:100%;display:block;}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes countPop{0%{transform:scale(1)}50%{transform:scale(1.08)}100%{transform:scale(1)}}
 
-.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease;}
-.reveal.visible{opacity:1;transform:translateY(0);}
-.reveal-left{opacity:0;transform:translateX(-28px);transition:opacity 0.7s ease,transform 0.7s ease;}
-.reveal-left.visible{opacity:1;transform:translateX(0);}
-.reveal-right{opacity:0;transform:translateX(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
-.reveal-right.visible{opacity:1;transform:translateX(0);}
-.reveal-scale{opacity:0;transform:scale(0.94);transition:opacity 0.6s ease,transform 0.6s ease;}
-.reveal-scale.visible{opacity:1;transform:scale(1);}
+/* Reveal animations — only animate when JS adds .js-anim class to body */
+.reveal,.reveal-left,.reveal-right,.reveal-scale{opacity:1;transform:none;}
+body.js-anim .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease;}
+body.js-anim .reveal.visible{opacity:1;transform:translateY(0);}
+body.js-anim .reveal-left{opacity:0;transform:translateX(-28px);transition:opacity 0.7s ease,transform 0.7s ease;}
+body.js-anim .reveal-left.visible{opacity:1;transform:translateX(0);}
+body.js-anim .reveal-right{opacity:0;transform:translateX(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
+body.js-anim .reveal-right.visible{opacity:1;transform:translateX(0);}
+body.js-anim .reveal-scale{opacity:0;transform:scale(0.94);transition:opacity 0.6s ease,transform 0.6s ease;}
+body.js-anim .reveal-scale.visible{opacity:1;transform:scale(1);}
 .d1{transition-delay:0.05s!important;}
 .d2{transition-delay:0.12s!important;}
 .d3{transition-delay:0.19s!important;}
@@ -137,7 +139,7 @@ nav{position:sticky;top:0;z-index:500;background:rgba(249,244,238,.97);backdrop-
 .ticker-dot{width:6px;height:6px;border-radius:50%;background:var(--lav);flex-shrink:0;}
 
 /* ─── SECTIONS ─── */
-.sec{max-width:1100px;margin:0 auto;padding:96px 32px;background:#ffffff;}
+.sec{max-width:1100px;margin:0 auto;padding:96px 32px;}
 .sec-full{padding:96px 32px;}
 .center{text-align:center;margin-left:auto;margin-right:auto;}
 .eyebrow{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
@@ -1396,10 +1398,12 @@ document.getElementById('payModal').addEventListener('click',function(e){if(e.ta
 
 // ── SCROLL REVEAL ──
 (function(){
+  if(!('IntersectionObserver' in window))return;
+  document.body.classList.add('js-anim');
   const els=document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale');
   const io=new IntersectionObserver(entries=>{
     entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
-  },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  },{threshold:0.05,rootMargin:'0px 0px -20px 0px'});
   els.forEach(el=>io.observe(el));
 })();
 
