@@ -85,7 +85,7 @@ body.js-anim .reveal-scale.visible{opacity:1;transform:scale(1);}
 
 /* ─── NAV ─── */
 nav{position:sticky;top:0;z-index:500;background:rgba(252,247,245,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:12px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
-.logo{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--text);white-space:nowrap;}
+.logo{display:flex;align-items:center;}
 .logo em{color:var(--lav);font-style:normal;}
 .nav-cta{padding:10px 22px;border-radius:8px;background:var(--lav);color:#fff;font-size:13px;font-weight:700;border:none;cursor:pointer;white-space:nowrap;transition:all .2s;font-family:'Outfit',sans-serif;}
 .nav-cta:hover{background:var(--lav2);transform:translateY(-1px);box-shadow:0 6px 20px rgba(124,111,212,.35);}
@@ -422,8 +422,8 @@ h2.H.lime-em em{color:var(--lime);}
 
 /* ─── FOOTER ─── */
 footer{padding:32px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;background:#fcf7f5;}
-.foot-logo{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--text);}
-.foot-logo em{color:var(--lav);font-style:normal;}
+.foot-logo{display:flex;align-items:center;}
+
 .foot-links{display:flex;gap:22px;flex-wrap:wrap;}
 .foot-links a{font-size:12px;color:var(--text3);text-decoration:none;}
 .foot-ai{font-size:11px;color:var(--lav);font-style:italic;}
@@ -598,17 +598,7 @@ footer{padding:32px;border-top:1px solid var(--border);display:flex;align-items:
 
 <!-- NAV -->
 <nav>
-  <a href="#" style="display:flex;align-items:center;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" height="36" aria-label="The5th Consulting">
-  <!-- Wave icon -->
-  <g transform="translate(0,4)">
-    <path d="M8 42 C8 42 14 28 14 18 C14 10 8 4 8 4" stroke="#0d2340" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-    <path d="M16 42 C16 42 24 26 24 15 C24 6 17 0 17 0" stroke="#0d2340" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-    <path d="M25 42 C25 42 34 24 34 13 C34 5 26 0 26 0" stroke="#0d2340" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-  </g>
-  <!-- Wordmark -->
-  <text x="46" y="28" font-family="'Outfit',sans-serif" font-weight="800" font-size="18" letter-spacing="1" fill="#0d2340">THE5TH</text>
-  <text x="46" y="44" font-family="'Outfit',sans-serif" font-weight="400" font-size="10" letter-spacing="3.5" fill="#0d2340">CONSULTING</text>
-</svg></a>
+  <a href="#" style="display:flex;align-items:center;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 72" height="40" style="width:auto;display:block;" aria-label="The5th Consulting"><path d="M12 58 C10 48 8 38 11 26 C13 18 18 10 20 4 C20 4 20 16 16 24 C14 28 11 30 11 30 C12 22 15 14 14 8 C12 4 8 0 5 -2 C6 8 4 18 3 26 C2 32 2 42 6 50 C9 55 12 58 16 58 Z" fill="#0d2b4e"/><path d="M26 60 C24 50 21 40 24 28 C26 20 31 12 33 5 C33 5 33 17 29 25 C27 29 24 32 24 32 C25 24 28 16 27 10 C25 5 21 1 18 -1 C19 9 17 20 17 28 C16 34 16 44 20 52 C23 57 27 61 30 61 Z" fill="#0d2b4e"/><path d="M40 62 C37 52 35 43 37 32 C39 24 43 17 45 11 C45 11 45 22 41 30 C39 34 37 37 37 37 C38 29 40 22 39 17 C38 12 34 8 31 6 C32 15 31 25 31 33 C30 40 30 49 33 56 C36 61 39 64 42 64 Z" fill="#0d2b4e"/><text x="58" y="38" font-family="Georgia,serif" font-size="26" font-weight="700" letter-spacing="3" fill="#0d2b4e">THE5TH</text><text x="59" y="58" font-family="Georgia,serif" font-size="11" font-weight="400" letter-spacing="5" fill="#0d2b4e">CONSULTING</text></svg></a>
   <button class="nav-cta" onclick="openCheckout('monthly')">Start Free Trial →</button>
 </nav>
 
@@ -619,15 +609,7 @@ footer{padding:32px;border-top:1px solid var(--border);display:flex;align-items:
   <div class="hero-glow2"></div>
   <div class="hero-inner">
     <div class="hero-content">
-      <div style="margin-bottom:24px;display:flex;align-items:center;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" height="32" aria-label="The5th Consulting">
-  <g transform="translate(0,4)">
-    <path d="M8 42 C8 42 14 28 14 18 C14 10 8 4 8 4" stroke="rgba(255,255,255,0.9)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-    <path d="M16 42 C16 42 24 26 24 15 C24 6 17 0 17 0" stroke="rgba(255,255,255,0.9)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-    <path d="M25 42 C25 42 34 24 34 13 C34 5 26 0 26 0" stroke="rgba(255,255,255,0.9)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-  </g>
-  <text x="46" y="28" font-family="'Outfit',sans-serif" font-weight="800" font-size="18" letter-spacing="1" fill="rgba(255,255,255,0.95)">THE5TH</text>
-  <text x="46" y="44" font-family="'Outfit',sans-serif" font-weight="400" font-size="10" letter-spacing="3.5" fill="rgba(255,255,255,0.6)">CONSULTING</text>
-</svg></div>
+      <div style="margin-bottom:24px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 72" height="36" style="width:auto;display:block;" aria-label="The5th Consulting"><path d="M12 58 C10 48 8 38 11 26 C13 18 18 10 20 4 C20 4 20 16 16 24 C14 28 11 30 11 30 C12 22 15 14 14 8 C12 4 8 0 5 -2 C6 8 4 18 3 26 C2 32 2 42 6 50 C9 55 12 58 16 58 Z" fill="#faf5ef"/><path d="M26 60 C24 50 21 40 24 28 C26 20 31 12 33 5 C33 5 33 17 29 25 C27 29 24 32 24 32 C25 24 28 16 27 10 C25 5 21 1 18 -1 C19 9 17 20 17 28 C16 34 16 44 20 52 C23 57 27 61 30 61 Z" fill="#faf5ef"/><path d="M40 62 C37 52 35 43 37 32 C39 24 43 17 45 11 C45 11 45 22 41 30 C39 34 37 37 37 37 C38 29 40 22 39 17 C38 12 34 8 31 6 C32 15 31 25 31 33 C30 40 30 49 33 56 C36 61 39 64 42 64 Z" fill="#faf5ef"/><text x="58" y="38" font-family="Georgia,serif" font-size="26" font-weight="700" letter-spacing="3" fill="#faf5ef">THE5TH</text><text x="59" y="58" font-family="Georgia,serif" font-size="11" font-weight="400" letter-spacing="5" fill="rgba(250,245,239,0.65)">CONSULTING</text></svg></div>
       <div class="hero-eyebrow"><span></span>Trained on the 10K Roadmap Method · Built for Women 40+</div>
       <h1>What if you had a <em>Personal CMO</em><br>on speed dial,&nbsp;<span class="hl">24/7?</span></h1>
       <p class="hero-sub">One who writes your content, closes your clients, plans your strategy and <strong>follows up with you every single day.</strong></p>
@@ -1398,17 +1380,7 @@ footer{padding:32px;border-top:1px solid var(--border);display:flex;align-items:
 
 <!-- FOOTER -->
 <footer>
-  <div class="foot-logo">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" height="36" aria-label="The5th Consulting">
-      <g fill="#172b4d">
-        <path d="M8 40 C8 40 16 32 16 20 C16 14 13 8 10 4 C10 4 11 12 7 16 C6 17 5 18 4 18 C4 14 5 10 5 7 C3 3 1 1 -1 -1 C-1 -1 2 8 0 16 C-1 20 -2 26 1 32 C3 37 8 40 12 40 Z" transform="translate(8,2)"/>
-        <path d="M14 42 C14 42 20 36 20 26 C20 22 18 18 15 15 C15 15 16 21 13 24 C12 25 11 26 11 26 C11 23 12 20 12 18 C10 13 7 10 4 8 C4 8 6 16 5 22 C4 26 4 30 6 34 C8 38 11 41 15 42 Z" transform="translate(16,2)"/>
-        <path d="M22 44 C22 44 26 39 26 33 C26 30 25 27 23 25 C23 25 23 29 21 32 C21 32 20 33 20 33 C20 31 20 29 20 27 C19 23 16 21 14 19 C14 19 16 25 15 29 C14 32 14 35 16 38 C17 41 19 44 22 44 Z" transform="translate(24,2)"/>
-      </g>
-      <text x="46" y="28" font-family="Georgia,serif" font-size="17" font-weight="700" letter-spacing="2.5" fill="#172b4d">THE5TH</text>
-      <text x="46" y="44" font-family="Georgia,serif" font-size="9" font-weight="400" letter-spacing="3.5" fill="#172b4d">CONSULTING</text>
-    </svg>
-  </div>
+  <div class="foot-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 72" height="40" style="width:auto;display:block;" aria-label="The5th Consulting"><path d="M12 58 C10 48 8 38 11 26 C13 18 18 10 20 4 C20 4 20 16 16 24 C14 28 11 30 11 30 C12 22 15 14 14 8 C12 4 8 0 5 -2 C6 8 4 18 3 26 C2 32 2 42 6 50 C9 55 12 58 16 58 Z" fill="#0d2b4e"/><path d="M26 60 C24 50 21 40 24 28 C26 20 31 12 33 5 C33 5 33 17 29 25 C27 29 24 32 24 32 C25 24 28 16 27 10 C25 5 21 1 18 -1 C19 9 17 20 17 28 C16 34 16 44 20 52 C23 57 27 61 30 61 Z" fill="#0d2b4e"/><path d="M40 62 C37 52 35 43 37 32 C39 24 43 17 45 11 C45 11 45 22 41 30 C39 34 37 37 37 37 C38 29 40 22 39 17 C38 12 34 8 31 6 C32 15 31 25 31 33 C30 40 30 49 33 56 C36 61 39 64 42 64 Z" fill="#0d2b4e"/><text x="58" y="38" font-family="Georgia,serif" font-size="26" font-weight="700" letter-spacing="3" fill="#0d2b4e">THE5TH</text><text x="59" y="58" font-family="Georgia,serif" font-size="11" font-weight="400" letter-spacing="5" fill="#0d2b4e">CONSULTING</text></svg></div>
   <div class="foot-links">
     <a href="https://platform.the5th.consulting">Member Login</a>
     <a href="https://10kroadmap.org">10K Roadmap</a>
@@ -1424,11 +1396,7 @@ footer{padding:32px;border-top:1px solid var(--border);display:flex;align-items:
     <!-- Modal header -->
     <div style="padding:18px 24px;border-bottom:1px solid #e5e0d8;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;background:#faf5ef;">
       <div style="display:flex;align-items:center;gap:10px;">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 52" height="28">
-          <g fill="#172b4d"><path d="M8 40 C8 40 16 32 16 20 C16 14 13 8 10 4 C10 4 11 12 7 16 C6 17 5 18 4 18 C4 14 5 10 5 7 C3 3 1 1 -1 -1 C-1 -1 2 8 0 16 C-1 20 -2 26 1 32 C3 37 8 40 12 40 Z" transform="translate(4,2)"/><path d="M14 42 C14 42 20 36 20 26 C20 22 18 18 15 15 C15 15 16 21 13 24 C12 25 11 26 11 26 C11 23 12 20 12 18 C10 13 7 10 4 8 C4 8 6 16 5 22 C4 26 4 30 6 34 C8 38 11 41 15 42 Z" transform="translate(12,2)"/><path d="M22 44 C22 44 26 39 26 33 C26 30 25 27 23 25 C23 25 23 29 21 32 C21 32 20 33 20 33 C20 31 20 29 20 27 C19 23 16 21 14 19 C14 19 16 25 15 29 C14 32 14 35 16 38 C17 41 19 44 22 44 Z" transform="translate(20,2)"/></g>
-          <text x="48" y="25" font-family="Georgia,serif" font-size="15" font-weight="700" letter-spacing="2" fill="#172b4d">THE5TH</text>
-          <text x="48" y="40" font-family="Georgia,serif" font-size="8" font-weight="400" letter-spacing="3" fill="#172b4d">CONSULTING</text>
-        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 72" height="26" style="width:auto;display:block;" aria-label="The5th Consulting"><path d="M12 58 C10 48 8 38 11 26 C13 18 18 10 20 4 C20 4 20 16 16 24 C14 28 11 30 11 30 C12 22 15 14 14 8 C12 4 8 0 5 -2 C6 8 4 18 3 26 C2 32 2 42 6 50 C9 55 12 58 16 58 Z" fill="#0d2b4e"/><path d="M26 60 C24 50 21 40 24 28 C26 20 31 12 33 5 C33 5 33 17 29 25 C27 29 24 32 24 32 C25 24 28 16 27 10 C25 5 21 1 18 -1 C19 9 17 20 17 28 C16 34 16 44 20 52 C23 57 27 61 30 61 Z" fill="#0d2b4e"/><path d="M40 62 C37 52 35 43 37 32 C39 24 43 17 45 11 C45 11 45 22 41 30 C39 34 37 37 37 37 C38 29 40 22 39 17 C38 12 34 8 31 6 C32 15 31 25 31 33 C30 40 30 49 33 56 C36 61 39 64 42 64 Z" fill="#0d2b4e"/><text x="58" y="38" font-family="Georgia,serif" font-size="26" font-weight="700" letter-spacing="3" fill="#0d2b4e">THE5TH</text><text x="59" y="58" font-family="Georgia,serif" font-size="11" font-weight="400" letter-spacing="5" fill="#0d2b4e">CONSULTING</text></svg>
         <span id="modal-plan-label" style="font-size:13px;font-weight:700;color:#18140f;"></span>
       </div>
       <button onclick="closeCheckout()" style="width:30px;height:30px;border-radius:8px;border:1px solid #e0dcd6;background:transparent;cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;color:#a09890;line-height:1;">×</button>
