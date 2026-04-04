@@ -1404,7 +1404,15 @@ footer{padding:32px;border-top:1px solid var(--border);display:flex;align-items:
     <!-- Plan summary strip -->
     <div id="modal-plan-strip" style="padding:12px 24px;background:#eeecfb;border-bottom:1px solid #e0dcd6;flex-shrink:0;"></div>
     <!-- Whop iframe -->
-    <iframe id="whopFrame" style="width:100%;flex:1;min-height:480px;border:none;" src="" allow="payment *" loading="lazy"></iframe>
+    <div style="padding:48px 32px;text-align:center;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;">
+    <div style="width:64px;height:64px;border-radius:50%;background:#eeecfb;display:flex;align-items:center;justify-content:center;">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7c6fd4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+    </div>
+    <p style="font-size:15px;font-weight:700;color:#18140f;">Opening Checkout...</p>
+    <p style="font-size:13px;color:#5c5650;line-height:1.7;max-width:320px;">Your secure checkout has opened in a new tab. Complete your purchase there and you will receive access instantly.</p>
+    <button id="openAgainBtn" onclick="" style="padding:12px 28px;border-radius:10px;background:#7c6fd4;color:#fff;font-size:14px;font-weight:700;border:none;cursor:pointer;font-family:'Outfit',sans-serif;">Open Checkout Again</button>
+    <button onclick="closeCheckout()" style="background:none;border:none;color:#a09890;font-size:13px;cursor:pointer;font-family:'Outfit',sans-serif;margin-top:4px;">Close</button>
+  </div>
   </div>
 </div>
 
@@ -1444,9 +1452,14 @@ const PLANS = {
 function openCheckout(type){
   const plan = PLANS[type] || PLANS.monthly;
   const returnUrl = encodeURIComponent('https://platform.the5th.consulting');
-  document.getElementById('whopFrame').src = 'https://whop.com/' + plan.id + '/checkout/?return_url=' + returnUrl;
+  const url = 'https://whop.com/' + plan.id + '?return_url=' + returnUrl;
+  // Open checkout in new tab (Whop blocks iframes)
+  window.open(url, '_blank');
+  // Show confirmation modal
   document.getElementById('modal-plan-label').textContent = plan.label;
   document.getElementById('modal-plan-strip').innerHTML = plan.strip;
+  const btn = document.getElementById('openAgainBtn');
+  if(btn) btn.onclick = function(){ window.open(url, '_blank'); };
   document.getElementById('payModal').classList.add('active');
   document.body.style.overflow = 'hidden';
 }
@@ -1459,7 +1472,6 @@ function openModal(planId){
 
 function closeCheckout(){
   document.getElementById('payModal').classList.remove('active');
-  document.getElementById('whopFrame').src = '';
   document.body.style.overflow = '';
 }
 document.getElementById('payModal').addEventListener('click',function(e){if(e.target===this)closeCheckout();});
